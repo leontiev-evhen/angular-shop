@@ -1,0 +1,3 @@
+function itemController ($scope, shopingCart) {
+	
+}

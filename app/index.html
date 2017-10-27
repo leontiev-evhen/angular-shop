@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <script src="./lib/angular/angular.min.js"></script>  
+		<script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script> 
+		<script src="app.js"></script> 
+		<script src="app.services.js"></script> 
+		
+		<!-- products -->
+		<script src="./src/products/products.controller.js"></script> 
+		<script src="./src/products/products.component.js"></script> 
+		
+		<!-- item -->
+		<script src="./src/item/item.controller.js"></script> 
+		<script src="./src/item/item.component.js"></script> 
+		
+		<script src="./src/cart/icon.basket.directive.js"></script> 
+		<script src="app.config.js"></script> 
+    </head>
+    <body>
+		<div>
+			<a ui-sref="products">Products</a>
+		</div>
+		<div style="float: right">
+			<icon-basket></icon-basket>
+		</div>
+		<ui-view></ui-view>
+	</body>
+</html>
+ 

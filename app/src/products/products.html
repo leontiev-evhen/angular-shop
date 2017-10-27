@@ -1,0 +1,5 @@
+<ul>
+	<li ng-repeat="(key, value) in getAllProducts() track by $index">
+		<a href="product/{{value.id}}">{{value.name}}</a>
+	</li>
+</ul>
