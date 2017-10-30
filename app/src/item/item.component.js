@@ -1,5 +1,7 @@
-angular.module('app')
-.component('item', {
-	templateUrl: './src/item/item.html',
-	controller: itemController
-})
+angular
+	.module('app')
+	.component('item', {
+		bindings: { item: '<' },
+		templateUrl: './src/item/item.html',
+		controller: itemCtrl
+	});

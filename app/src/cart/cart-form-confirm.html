@@ -1,0 +1,49 @@
+<div class="row">  
+    <div class="col-md-12 user_form">
+	    <form name="userForm" ng-submit="submitForm(user)" novalidate>
+			<div class="col-md-6">
+				<!-- Payment -->
+				<h4>Payment system</h4>
+		    	<div ng-repeat="payment in payments">
+		    		<label>
+		    			<input type="radio" ng-model="user.payment" value="{{payment.name}}" name="payment" required/>{{payment.name}}
+		    		</label>
+		    	</div>
+				<div ng-show="userForm.$submitted || userForm.payment.$touched">
+			      	<span ng-show="userForm.payment.$error.required" class="help-block">Choose payment system.</span>
+			    </div>
+			</div>
+			<div class="col-md-6">
+		        <!-- Name -->
+		        <label>Name</label>
+		        <input type="text" name="name" class="form-control" ng-model="user.name" ng-minlength="3" ng-maxlength="20" required>
+		        <div ng-show="userForm.$submitted || userForm.name.$touched">
+		        	<p ng-show="userForm.name.$error.minlength" class="help-block">Name is too short.</p>
+					<p ng-show="userForm.name.$error.maxlength" class="help-block">Name is too short.</p>
+		        	<p ng-show="userForm.name.$error.required" class="help-block">You name is required.</p>
+		        </div>
+		     
+		        <!-- Surname -->
+		        <label>Surname</label>
+		        <input type="text" name="surname" class="form-control" ng-model="user.surname" ng-minlength="3" ng-maxlength="20" required>
+		        <div ng-show="userForm.$submitted || userForm.surname.$touched">
+		        	<p ng-show="userForm.surname.$error.minlength" class="help-block">Surname is too short.</p>
+		        	<p ng-show="userForm.surname.$error.maxlength" class="help-block">Surname is too short.</p>
+		        	<p ng-show="userForm.surname.$error.required" class="help-block">You surname is required.</p>
+		        </div>
+		       
+		        <!-- Email -->
+		        <label>Email</label>
+		        <input type="email" name="email" class="form-control" ng-model="user.email" required>
+		        <div ng-show="userForm.$submitted || userForm.email.$touched">
+			      	<span ng-show="userForm.email.$error.required" class="help-block">Tell us your email.</span>
+			      	<span ng-show="userForm.email.$error.email" class="help-block">This is not a valid email.</span>
+			    </div>
+		 		
+
+		 		
+		        <button type="submit" class="btn btn-primary">Submit</button>
+	        </div>
+	    </form>
+	</div>
+</div>

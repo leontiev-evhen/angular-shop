@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Paypal"
+	},
+	{
+		"name": "Dwolla"
+	},
+	{
+		"name": "Google Checkout"
+	},
+	{
+		"name": "Amazon Payments"
+	}
+]

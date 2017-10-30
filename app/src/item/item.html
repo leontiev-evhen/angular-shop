@@ -1,1 +1,21 @@
-hi
+<div class="product-details"><!--product-details-->
+	<div class="col-sm-5">
+		<div class="view-product">
+			<img src="./assets/images/home/{{$ctrl.item.img}}" alt="">
+		</div>
+	</div>
+	<div class="col-sm-7">
+		<flash-message duration="2000"></flash-message>
+		<div class="product-information"><!--/product-information-->
+			<h2>{{$ctrl.item.name}}</h2>
+			<span>
+				<span>{{$ctrl.item.price | currency}}</span>
+				<button type="button" class="btn btn-fefault cart" ng-click="addToCart()">
+					<i class="fa fa-shopping-cart"></i>
+					Add to cart
+				</button>
+			</span>
+			<p>{{$ctrl.item.description}}</p>
+		</div><!--/product-information-->
+	</div>
+</div>

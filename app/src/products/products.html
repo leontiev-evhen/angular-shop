@@ -1,5 +1,34 @@
-<ul>
-	<li ng-repeat="(key, value) in getAllProducts() track by $index">
-		<a href="product/{{value.id}}">{{value.name}}</a>
-	</li>
-</ul>
+<div class="row">
+<div class="col-md-3">
+	<div class="search_box">
+		<input type="text" placeholder="Search" ng-model="search"/>
+	</div>
+</div>
+</div>
+<div class="row">
+	<div class="col-sm-4" ng-repeat="(key, value) in $ctrl.products | filter: {name: search} track by $index">
+		<div class="product-image-wrapper">
+			<div class="single-products">
+				<div class="productinfo text-center">
+					<img src="./assets/images/home/{{value.img}}" alt="" />
+					<h2>{{value.price | currency}}</h2>
+					<p><a href="#!/product/{{value.id}}">{{value.name}}</a></p>
+					<a href="#" class="btn btn-default add-to-cart" ng-click="addToCart(value)"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+				</div>
+				<div class="product-overlay">
+					<div class="overlay-content">
+						<flash-message duration="2000"></flash-message>
+						<div class="overlay_img">
+							<a href="#!/product/{{value.id}}">
+								<img src="./assets/images/home/{{value.img}}" alt="" />
+							</a>
+						</div>
+						<h2>{{value.price | currency}}</h2>
+						<p><a href="#!/product/{{value.id}}">{{value.name}}</a></p>
+						<a class="btn btn-default add-to-cart" ng-click="addToCart(value)"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

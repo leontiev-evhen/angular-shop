@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html ng-app="app">
     <head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <title>AngularJs shop</title>
+	    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="./assets/css/font-awesome.min.css" rel="stylesheet">
+	    <link href="./assets/css/prettyPhoto.css" rel="stylesheet">
+	    <link href="./assets/css/price-range.css" rel="stylesheet">
+	    <link href="./assets/css/animate.css" rel="stylesheet">
+		<link href="./assets/css/main.css" rel="stylesheet">
+		<link href="./assets/css/responsive.css" rel="stylesheet">
+
+
         <script src="./lib/angular/angular.min.js"></script>  
-		<script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script> 
+		<script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="./lib/angular-flash-alert/dist/angular-flash.min.js"></script>
+		
 		<script src="app.js"></script> 
-		<script src="app.services.js"></script> 
+
+		<!-- services -->
+		<script src="./src/services/products.services.js"></script> 
+		<script src="./src/services/cart.services.js"></script> 
+		<script src="./src/services/payment.services.js"></script> 
+		<script src="./src/services/storage.services.js"></script> 
+
+		<!-- routing -->
+		<script src="app.config.js"></script> 
 		
 		<!-- products -->
 		<script src="./src/products/products.controller.js"></script> 
@@ -13,18 +37,52 @@
 		<!-- item -->
 		<script src="./src/item/item.controller.js"></script> 
 		<script src="./src/item/item.component.js"></script> 
+
+		<!-- cart -->
+		<script src="./src/cart/cart.controller.js"></script> 
+		<script src="./src/cart/cart.component.js"></script> 
 		
-		<script src="./src/cart/icon.basket.directive.js"></script> 
-		<script src="app.config.js"></script> 
+		<!-- form confirm -->
+		<script src="./src/cart/cart.form.controller.js"></script> 
+		<script src="./src/cart/cart.form.confirm.component.js"></script> 
+
+		<!-- success -->
+		<script src="./src/pages/success.controller.js"></script> 
+		<script src="./src/pages/success.component.js"></script> 
+		
+		<!-- directives -->
+		<script src="./src/directives/cart.directive.js"></script> 
+		<script src="./src/directives/footer.directive.js"></script> 
+		<script src="./src/directives/header-bottom.directive.js"></script> 
+		<script src="./src/directives/header-top.directive.js"></script> 
     </head>
     <body>
-		<div>
-			<a ui-sref="products">Products</a>
-		</div>
-		<div style="float: right">
-			<icon-basket></icon-basket>
-		</div>
-		<ui-view></ui-view>
+		<header id="header"><!--header-->
+			<header-top></header-top>
+			<header-bottom></header-bottom>
+		</header><!--/header-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="features_items"><!--features_items-->
+							<h2 class="title text-center">AngularJS shop</h2>
+							
+							<ui-view></ui-view>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--footer-->
+		<div footer></div>
+		<!--/footer-->
+		<script src="./assets/js/jquery.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script src="./assets/js/jquery.scrollUp.min.js"></script>
+		<script src="./assets/js/price-range.js"></script>
+	    <script src="./assets/js/jquery.prettyPhoto.js"></script>
+	    <script src="./assets/js/main.js"></script>			
 	</body>
 </html>
- 
